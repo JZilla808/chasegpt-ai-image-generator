@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     : "https://chasegpt-ai-image-generator.azurewebsites.net/api/generateimage";
 
   //   Connect to our Microsoft Azure Function Endpoint
-  https: const response = await fetch(apiUrl, {
+  const response = await fetch(apiUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
