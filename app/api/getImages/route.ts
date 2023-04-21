@@ -6,7 +6,7 @@ export async function GET(request: Request) {
   //   console.log("isDevEnv:", isDevEnv);
 
   // Set the API endpoint based on the environment
-  // TODO: Update the Azure Function URL
+  // Update the Azure Function URL
   const apiUrl = isDevEnv
     ? "http://127.0.0.1:7071/api/getImages"
     : "https://chasegpt-ai-image-generator.azurewebsites.net/api/getimages";

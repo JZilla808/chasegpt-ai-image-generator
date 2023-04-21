@@ -3,10 +3,10 @@ export async function GET(request: Request) {
   const isDevEnv = process.env.NODE_ENV === "development";
 
   //   Debug logging
-  //   console.log("isDevEnv:", isDevEnv);
+  console.log("isDevEnv:", isDevEnv);
 
   // Set the API endpoint based on the environment
-  // TODO: Update the Azure Function URL
+  // Update the Azure Function URL
   const apiUrl = isDevEnv
     ? "http://127.0.0.1:7071/api/getChatGPTSuggestion"
     : "https://chasegpt-ai-image-generator.azurewebsites.net/api/getchatgptsuggestion";
@@ -16,7 +16,7 @@ export async function GET(request: Request) {
   const textData = await response.text();
 
   //   Debug logging
-  //   console.log("textData:", textData);
+  console.log("textData:", textData);
 
   return new Response(JSON.stringify(textData.trim()), { status: 200 });
 }

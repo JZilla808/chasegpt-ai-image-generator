@@ -10,13 +10,13 @@ export async function POST(request: Request) {
   //   console.log("isDevEnv:", isDevEnv);
 
   // Set the API endpoint based on the environment
-  // TODO: Update the Azure Function URL
+  // Update the Azure Function URL
   const apiUrl = isDevEnv
     ? "http://127.0.0.1:7071/api/generateImage"
     : "https://chasegpt-ai-image-generator.azurewebsites.net/api/generateimage";
 
   //   Connect to our Microsoft Azure Function Endpoint
-  const response = await fetch(apiUrl, {
+  https: const response = await fetch(apiUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
