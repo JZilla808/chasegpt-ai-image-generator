@@ -78,7 +78,7 @@ function PromptInput() {
     <div className="m-10">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col lg:flex-row shadow-md shadow-slate-400/10 border rounded-md"
+        className="flex flex-col lg:flex-row shadow-md shadow-slate-400/10 border rounded-md lg:divide-x"
       >
         <textarea
           value={input}
@@ -118,7 +118,7 @@ function PromptInput() {
       </form>
 
       {input && (
-        <p className="italic pt-2 font-light">
+        <p className="italic pt-2 pl-2 font-light">
           Suggestion:{" "}
           <span className="text-violet-500">
             {loading ? "ChaseGPT is thinking..." : suggestion}
