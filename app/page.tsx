@@ -1,9 +1,11 @@
-import Images from "@/components/Images";
+import Images from "../components/Images";
 
-export default function Home() {
+async function HomePage() {
   return (
-    <main className="mx-0">
+    <div className="mx-0 md:10">
       <Images />
-    </main>
+    </div>
   );
 }
+
+export default HomePage;

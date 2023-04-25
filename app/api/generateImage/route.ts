@@ -1,28 +1,21 @@
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-  const res = await request.json(); // res now contains the JSON body
+  const res = await request.json(); // res now contains body
   const prompt = res.prompt;
 
-  const isDevEnv = process.env.NODE_ENV === "development";
+  // localhost url = "http://127.0.0.1:7071/api/generateImage"
 
-  //   Debug logging
-  //   console.log("isDevEnv:", isDevEnv);
-
-  // Set the API endpoint based on the environment
-  // Update the Azure Function URL
-  const apiUrl = isDevEnv
-    ? "http://127.0.0.1:7071/api/generateImage"
-    : "https://chasegpt-ai-image-generator.azurewebsites.net/api/generateimage";
-
-  //   Connect to our Microsoft Azure Function Endpoint
-  const response = await fetch(apiUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ prompt }),
-  });
+  const response = await fetch(
+    "https://chasegpt-ai-image-generator.azurewebsites.net/api/generateimage",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ prompt }),
+    }
+  );
 
   const textData = await response.text();
 

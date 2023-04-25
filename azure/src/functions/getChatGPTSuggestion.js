@@ -41,7 +41,8 @@ app.http("getChatGPTSuggestion", {
 
     const responseText = response.data.choices[0].message.content;
 
-    // context.log(`Response: ${responseText}`);
+    // Debug logging
+    context.log(`Generated Suggestion: ${responseText}`);
 
     return {
       body: responseText,
