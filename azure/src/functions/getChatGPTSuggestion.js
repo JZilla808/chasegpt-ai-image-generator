@@ -22,7 +22,7 @@ app.http("getChatGPTSuggestion", {
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: message,
-      max_tokens: 300,
+      max_tokens: 500,
       temperature: 0.8,
     });
 
