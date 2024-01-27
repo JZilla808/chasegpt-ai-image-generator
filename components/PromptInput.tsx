@@ -77,7 +77,7 @@ function PromptInput() {
       >
         <textarea
           placeholder={
-            (loading && "ChatGPT is thinking of a suggestion...") ||
+            (loading && "ChaseGPT is thinking of a suggestion...") ||
             suggestion ||
             "Enter a prompt..."
           }
@@ -117,7 +117,7 @@ function PromptInput() {
         <p className="italic pt-2 pl-2 font-light">
           Suggestion:{" "}
           <span className="text-violet-500">
-            {loading ? "ChatGPT is thinking..." : suggestion}
+            {loading ? "ChaseGPT is thinking..." : suggestion}
           </span>
         </p>
       )}
