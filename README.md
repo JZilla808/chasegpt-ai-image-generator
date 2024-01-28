@@ -1,5 +1,5 @@
 
-# Welcome to the ChaseGPT AI Image Generator Repository
+# Welcome to the ChaseGPT AI Image Generator
 
 This innovative web application leverages the power of OpenAI's ChatGPT and DALL-E models to generate creative images based on user prompts. It's a showcase of integrating AI with modern web technologies to create a seamless and interactive user experience.
 
