@@ -5,8 +5,6 @@ app.http("getChatGPTSuggestion", {
   methods: ["GET"],
   authLevel: "anonymous",
   handler: async (request, context) => {
-    console.log("Handler function called");
-
     // api call using gpt-3.5-turbo model
     const message = [
       {
@@ -21,19 +19,24 @@ app.http("getChatGPTSuggestion", {
       },
     ];
 
-    console.log("Preparing to make request to OpenAI API");
+    const response = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: message,
+      max_tokens: 500,
+      temperature: 0.8,
+    });
 
-    try {
-      const response = await openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
-        messages: message,
-        max_tokens: 300,
-        temperature: 0.8,
-      });
+    context.log(`Http function processed request for url "${request.url}"`);
 
-      console.log("Request to OpenAI API successful");
-    } catch (error) {
-      context.log(`Error making request to OpenAI API: ${error.message}`);
-    }
+    // const responseText = response.data.choices[0].text;
+
+    const responseText = response.data.choices[0].message.content;
+
+    // Debug logging
+    context.log(`Generated Suggestion: ${responseText}`);
+
+    return {
+      body: responseText,
+    };
   },
 });
