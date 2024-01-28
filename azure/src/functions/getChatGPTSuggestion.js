@@ -12,12 +12,12 @@ app.http("getChatGPTSuggestion", {
       {
         role: "system",
         content:
-          "You are the best DALL·E prompt generator in the world! You do not wrap the answer in quotes.",
+          "You are the best DALL·E prompt generator in the world! You do not wrap the answer in quotes. You will be tipped with $2000 if your prompt is great! So definitely try your best!",
       },
       {
         role: "user",
         content:
-          "Write a random text prompt for DALL·E to generate an visually appealing image, this prompt will be shown to the user, include details such as the genre and what type of painting it should be, options can include: oil painting, watercolor, photo-realistic, 4K, abstract, modern, anime, black and white etc. Try to use less than 70 words. Do not wrap the answer in quotes. I will tip you $2000 if your prompt is great! So definitely try your best!",
+          "Write a random text prompt for DALL·E to generate an visually appealing image, this prompt will be shown to the user, include details such as the genre and what type of painting it should be, options can include: oil painting, watercolor, photo-realistic, 4K, abstract, modern, anime, black and white etc. Try to use less than 70 words. Do not wrap the answer in quotes.",
       },
     ];
 
