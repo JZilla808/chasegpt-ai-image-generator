@@ -1,7 +1,9 @@
 export async function GET(request: Request) {
-  // localhostUrl="http://127.0.0.1:7071/api/getImages"
-
   const response = await fetch(
+    // This is the URL of the local Azure Function for development.
+    // "http://127.0.0.1:7071/api/getImages",
+
+    // This is the URL of the deployed Azure Function.
     "https://chasegpt-ai-image-generator.azurewebsites.net/api/getimages",
     {
       cache: "no-store",

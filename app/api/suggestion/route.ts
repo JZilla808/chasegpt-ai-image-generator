@@ -1,7 +1,10 @@
 export async function GET(request: Request) {
   const response = await fetch(
-    // localhostUrl="http://127.0.0.1:7071/api/getChatGPTSuggestion"
-    "https://chasegpt-ai-image-generator.azurewebsites.net/api/getchatgptsuggestion",
+    // TODO: This is the URL of the local Azure Function for development. CHANGE TO DEPLOYED URL
+    "http://127.0.0.1:7071/api/getChatGPTSuggestion",
+
+    // This is the URL of the deployed Azure Function.
+    // "https://chasegpt-ai-image-generator.azurewebsites.net/api/getchatgptsuggestion",
     {
       cache: "no-store",
     }
