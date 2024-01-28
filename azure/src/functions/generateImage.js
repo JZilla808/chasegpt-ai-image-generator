@@ -19,6 +19,7 @@ app.http("generateImage", {
     console.log("Prompt: ", prompt);
 
     const response = await openai.createImage({
+      model: "dall-e-3",
       prompt: prompt,
       n: 1,
       size: "1024x1024",
