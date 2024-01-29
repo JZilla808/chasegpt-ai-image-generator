@@ -5,7 +5,7 @@ import "../styles/globals.css";
 
 export const metadata = {
   title: "AI Image Generator",
-  description: "Built with Next.js 13.2, DALL·E 2, and Chat GPT",
+  description: "Built with Next.js 13.2, DALL·E 3, and ChatGPT",
 };
 
 export default function RootLayout({
